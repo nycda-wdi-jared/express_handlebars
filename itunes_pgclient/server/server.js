@@ -5,6 +5,7 @@ var Handlebars = require('handlebars');
 var path = require('path');
 
 var routes = require('./controller/routes.js');
+var handlebars_helpers = require('./helpers/handlebars_helpers.js');
 
 var app = express();
 
@@ -16,17 +17,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json'}));
 app.engine('handlebars', exphbs({
 	defaultLayout: 'main',
 	layoutsDir: 'client/public/views/layouts',
-	helpers: {
-        inc: function (value) { return parseInt(value) + 1; },
-        lyrics: function (value, options) { 
-			var spanStr = "";
-			var lyricArr = value.split("\n");
-			for(var i = 0; i < lyricArr.length; i++){
-				spanStr += "<span>" + lyricArr[i] + "</span><br>"
-			}
-			return new Handlebars.SafeString(spanStr);
-        }
-    }
+	helpers: handlebars_helpers
 }));
 app.set('view engine', 'handlebars');
 app.set('views', path.resolve(__dirname,'../client/public/views'));
