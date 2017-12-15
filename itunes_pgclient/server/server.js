@@ -1,7 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
-var Handlebars = require('handlebars');
 var path = require('path');
 
 var routes = require('./controller/routes.js');
