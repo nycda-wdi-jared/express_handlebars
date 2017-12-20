@@ -1,0 +1,29 @@
+<a href='/'>
+	<button class='btn btn-warning'>
+		<span class='glyphicon glyphicon-home' aria-hidden='true'></span>
+	</button>
+</a>
+<h1 id="header">{{data.artist}} - {{data.title}}</h1><br>
+<div>
+	{{#each data.lyrics}}
+		<span>{{this}}</span><br>
+	{{/each}}
+</div>
+
+<!--
+	1. The data will go here
+	2. When looping through the lyrics array, each index is represented by this
+
+
+	an example of looping through an array through handlebars
+
+	array on server side 
+	var whatever = ['hello', 'goodbye'];
+	{data: whatever}
+
+	looping on client side
+	{{#each data}}
+		<span>{{this}}</span>
+	{{/each}}
+
+-->

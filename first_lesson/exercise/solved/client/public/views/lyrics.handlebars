@@ -1,0 +1,11 @@
+<a href='/'>
+	<button class='btn btn-warning'>
+		<span class='glyphicon glyphicon-home' aria-hidden='true'></span>
+	</button>
+</a>
+<h1 id="header">{{data.artist}} - {{data.title}}</h1><br>
+<div>
+	{{#each data.lyrics}}
+		<span>{{this}}</span><br>
+	{{/each}}
+</div>
