@@ -1,0 +1,22 @@
+<link rel="stylesheet" type="text/css" href="./public/css/home.css">
+<script src="./public/js/home.js"></script>
+
+<div class="container">
+	<h1>Users</h1>
+	<table class="table">
+		<tr>
+			<th>Name</th>
+			<th>Occupation</th>
+			<th>Age</th>
+			<th>Bald?</th>
+		</tr>
+		{{#each user}}
+			<tr>
+				<td>{{this.name}}</td>
+				<td>{{this.occupation}}</td>
+				<td>{{this.age}}</td>
+				<td>{{this.bald}}</td>
+			</tr>
+		{{/each}}
+	</table>
+</div>
