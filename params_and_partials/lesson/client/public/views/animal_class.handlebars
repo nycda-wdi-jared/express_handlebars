@@ -1,0 +1,16 @@
+<link rel="stylesheet" type="text/css" href="../../public/css/animal_class.css">
+<script src="../../public/js/animal_class.js"></script>
+
+<div class="text-center">
+	<h1>{{class}}</h1>
+	<div id="animal-div">
+		{{#each animals}}
+			<div class="each-animal-div animal-{{@index}}">
+				<a href="/animal/{{apiSplit this.name}}">
+					<p>{{this.name}}</p>
+				</a>
+			</div>
+		{{/each}}
+	</div>
+</div>
+{{> homeNav }}

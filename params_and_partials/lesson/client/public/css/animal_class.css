@@ -1,0 +1,11 @@
+#animal-div {
+	display: inline-flex;
+}
+
+h1 {
+	color: blue;
+}
+
+.each-animal-div {
+	padding: 50px;
+}

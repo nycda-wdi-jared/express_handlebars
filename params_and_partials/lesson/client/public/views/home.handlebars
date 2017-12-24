@@ -1,0 +1,11 @@
+<link rel="stylesheet" type="text/css" href="./public/css/home.css">
+<script src="./public/js/home.js"></script>
+
+<div class="container">
+	<h1>Animal Params App</h1>
+	{{#each animal_classes}}
+		<a href="/animal/class/{{this}}">
+			<img class="animal-class-image" src="./public/images/{{this}}.jpg"/>
+		</a>
+	{{/each}}
+</div>
