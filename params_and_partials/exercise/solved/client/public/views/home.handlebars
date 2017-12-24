@@ -1,0 +1,16 @@
+<link rel="stylesheet" type="text/css" href="./public/css/home.css">
+<script src="./public/js/home.js"></script>
+
+<div class="container text-center">
+	<h1>Car App</h1>
+	<div id="cars-div">
+		{{#each cars}}
+			<div class="car-div">
+				<a href="/cars/{{apiSplit this.make}}">
+					<h3>{{this.make}}s</h3>
+				</a>
+			</div>
+		{{/each}}
+	</div>
+</div>
+{{> footer}}

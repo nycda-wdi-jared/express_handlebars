@@ -1,0 +1,10 @@
+<link rel="stylesheet" type="text/css" href="../public/css/car.css">
+
+<div>
+	{{#each data}}
+		<h2>{{this.model}}</h2>
+		<img class="car-image" src="../public/images/{{apiSplit this.model}}.jpg"/>
+	{{/each}}
+</div>
+{{> homeNav}}
+{{> footer}}

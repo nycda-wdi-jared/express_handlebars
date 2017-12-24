@@ -5,8 +5,10 @@ var router = express.Router();
 
 var user_data = require('./../models/user_data.js');
 
-router.get("/", function(req,res){
-	res.render('home', {user: user_data});
-})
+/*
+
+	Create the "/" route here, and send through the user_data
+
+*/
 
 module.exports = router;

@@ -1,0 +1,12 @@
+h1 {
+	color: blue;
+	font-size: 36px;
+}
+
+#cars-div {
+	display: inline-flex;
+}
+
+.car-div {
+	padding: 40px;
+}
