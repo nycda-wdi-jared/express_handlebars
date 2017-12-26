@@ -1,4 +1,4 @@
-# Sequelize CRUD
+# Sequelize/Handlebars CRUD
 
 * The old guestbook code is commented out in the server
 * As you can tell, the only changes that i made on the client side was the callback object
