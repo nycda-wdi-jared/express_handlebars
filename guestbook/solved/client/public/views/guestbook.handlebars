@@ -1,0 +1,40 @@
+<link rel="stylesheet" type="text/css" href="./public/css/styles.css">
+<script src="./public/js/app.js"></script>
+
+<h1 class="text-center">Welcome to Hoosker Do's Guestbook</h1>
+<br>
+<h3 class="text-center">Please Leave your name and a polite message</h3>
+<div class="text-center center-block">
+	<form id="guestbook-form">
+		<label>Name</label><br>
+		<input type="text" id="name-input"/><br>
+		<label>Message</label><br>
+		<textarea id="message-input"></textarea>
+		<br>
+		<input class="btn btn-secondary" id="submit-this" type="submit">
+	</form>
+</div>
+<div id="everything-div">
+	<!--
+	This does not work out for the guestbook because I am doing a lot of the functionality through the jQuery
+
+	{{#each messages}}
+		<div class="well guest-div">
+			<button class="btn btn-danger x-button" data-id={{this.id}}>x</button>
+			<p style="font-weight: bold;">{{this.name}}</p>
+			<p class="message" data-id={{this.id}}>Message: {{this.message}}</p>
+		</div>
+	{{/each}}
+	-->
+</div>
+<div id = "update-message-modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content text-center">
+			<div class="modal-header">
+				<h2>Update Message</h2>
+			</div>
+			<div class="modal-body"></div>
+			<div class="modal-footer"></div>
+		</div>
+	</div>
+</div>
