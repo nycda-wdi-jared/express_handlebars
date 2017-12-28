@@ -4,16 +4,18 @@
 	</button>
 </a>
 <h1 id="header">{{data.artist}} - {{data.title}}</h1><br>
-<!--
-	1. The data will go here
-	2. When looping through the lyrics array, each index is represented by this
-
+<!-- 
+	append the data to the table body here
+	
+	When looping through the array, each index is represented by 'this'
 
 	an example of looping through an array through handlebars
 
 	array on server side 
 	var whatever = ['hello', 'goodbye'];
-	{data: whatever}
+
+	res.render('home', {data: whatever})
+	'home' is represented by home.handlebars here
 
 	looping on client side
 	{{#each data}}
