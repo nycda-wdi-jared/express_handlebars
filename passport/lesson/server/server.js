@@ -2,6 +2,7 @@ var path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
+var methodOverride = require('method-override');
 
 var models = require('./models');
 models.sequelize.sync();
@@ -17,6 +18,9 @@ var routes = require('./controllers/routes.js');
 
 //port used for dev and prod
 var PORT = process.env.PORT || 8000;
+
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'))
 
 //body parser middleware
 app.use(bodyParser.json({limit: '50mb'}));

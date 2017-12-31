@@ -8,11 +8,13 @@ var router = express.Router();
 
 router.get('/', function(req,res){
 	models.Song.findAll({}).then((songs) => {
-		console.log(songs)
+		//console.log(songs)
+		//sending the songs callback to the home.handlebars file
 		res.render('home', {songs: songs});
 	});
 });
 
+//this is being used in the jQuery/Ajax
 router.post('/create-song', (req,res) => {
 	models.Song.create({
 		title: req.body.title,

@@ -6,6 +6,11 @@
 	* You can use the ui for the user
 	* Use postman to create a profile
 
+* In this lesson, you will be learning:
+	* how to get passport to work with handlebars
+	* how to use if/else statements in handlebars
+	* how to send through data to a handlebars file
+
 # Postgres Sequelize Passport Boilerplate + Heroku Push
 
 <h2>Heroku</h2>

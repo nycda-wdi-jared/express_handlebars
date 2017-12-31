@@ -9,8 +9,15 @@ var models = require('../models');
 */
 module.exports = (app, passport) => {
 
+	/*
+		adjusted the home page based on if there is a user logged in
+	*/
 	app.get('/', function(req,res){
-		res.render('main_page');
+		if(req.user){
+			res.render('main_page', {message: 'signed-in', user_id: req.user.id});
+		} else {
+			res.render('main_page');
+		}
 	});
 
 	app.get('/sign-up', function(req,res){
@@ -72,11 +79,14 @@ module.exports = (app, passport) => {
 	  	})(req, res, next);
 	});
 
-	app.get('/api/signed-in', (req,res) => {
-		if(req.user){
-			res.json({message: 'signed-in', user_id: req.user.id});
-		}
-	})
+	/*
+		This route is now being handled at the top with the '/' route
+	*/
+	// app.get('/api/signed-in', (req,res) => {
+	// 	if(req.user){
+	// 		res.json({message: 'signed-in', user_id: req.user.id});
+	// 	}
+	// })
 
 	app.get('/profile/:id', (req,res) => {
 		//if the login went through, it creates this req.user object able to be used throughout

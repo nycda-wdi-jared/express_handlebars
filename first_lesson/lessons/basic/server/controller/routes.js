@@ -8,6 +8,12 @@ var router = express.Router();
 
 router.get('/', function(req,res){
 	models.Song.findAll({}).then((songs) => {
+		/*
+			The line below is stating:
+			when this route is hit, render the 'home'.handlebars file
+			& send through the songs callback from the sequelize query
+			through an object with a key of songs
+		*/
 		res.render('home', {songs: songs});
 	});
 });
