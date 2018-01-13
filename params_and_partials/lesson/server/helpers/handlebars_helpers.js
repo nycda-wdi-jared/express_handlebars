@@ -7,6 +7,11 @@ var Handlebars = require('handlebars');
 	for that item in the array, so {{inc @index}} means that the @index is represented
 	by the value parameter, and will translate to the client side
 */
+/*
+	Look for apiSplit in the handlebars files
+	{{apiSplit whatever}} - whatever is the value parameter
+	So, that value will now be split and joined to lowercase
+*/
 module.exports = {
     inc: function (value) { 
     	return parseInt(value) + 1; 

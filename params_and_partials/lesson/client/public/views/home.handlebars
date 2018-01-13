@@ -1,6 +1,19 @@
 <link rel="stylesheet" type="text/css" href="./public/css/home.css">
-<script src="./public/js/home.js"></script>
+{{!-- 
+	Look at the '/' route in the routes.js file on the server side
+	This is the info being sent through:
+		- res.render('home', {animal_classes: classes});
+		console.log(classes) in routes.js, see how the information is being sent over, and then see how it renders on the ui.
+		the animal_classes key in the object is an array,
+		so im looping through that array
+		{{this}} represents each item in the classes array
 
+	Look in the images folder, and then how the images are appended to the ui
+	Look at the link for each image, thats getting created in the a tag
+	Both of those are being created dynamically through handlebars
+
+	When the image is clicked on, {{this}} in <a href="/animal/class/{{this}}"> is represented as the params in that same routes.js file: /animal/class/:class, so if the amphibia picture is clicked on (/animals/class/amphibia), then amphibia is represented by  req.params.class on the server side
+--}}
 <div class="container">
 	<h1>Animal Params App</h1>
 	{{#each animal_classes}}

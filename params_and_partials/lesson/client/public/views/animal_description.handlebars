@@ -1,6 +1,15 @@
 <link rel="stylesheet" type="text/css" href="../public/css/animal_description.css">
-<script src="../public/js/animal_description.js"></script>
 
+{{!--
+	Look for this route on the server: /animal/:animal
+
+	Look at how information is being sent over from the server: res.render('animal_description', {animal: animal})
+
+	console.log animal on the server side, and then see how it is 
+	appended on the ui
+
+	homeNav is a partial - imported html
+--}}
 <div class="container">
 	<div class="text-center">
 		<h2>{{animal.name}}</h2>
@@ -8,4 +17,5 @@
 		<span>{{animal.description}}</span>
 	</div>
 </div>
+
 {{> homeNav }}

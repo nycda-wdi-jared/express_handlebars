@@ -1,6 +1,16 @@
 <link rel="stylesheet" type="text/css" href="../../public/css/animal_class.css">
 <script src="../../public/js/animal_class.js"></script>
 
+{{!--
+	- This is the page that you are directed to after the animal picture is clicked on the '/' route.
+	- Look at what is being sent through from the server side: 
+	res.render('animal_class', {animals: animals, class: animal_class})
+		- console.log animals and animal_class and view that in the terminal, and then see how it is being appended to the dom through the handlebars. Make that connection
+	- When the arachnida picture is clicked, then the route for this page would be '/animal/class/arachnida'
+	- Now look at the jQuery in the animal_class.js file
+
+	homeNav is a partial, and being imported. Look in the partials file for it.
+--}}
 <div class="text-center">
 	<h1>{{class}}</h1>
 	<div id="animal-div">
