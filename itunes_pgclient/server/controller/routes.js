@@ -3,18 +3,18 @@ var express = require('express');
 var path = require('path');
 
 var dbUrl;
-
-if(process.env.DATABASE_URL){
-	dbUrl = process.env.DATABASE_URL
-} else {
-	dbUrl = {
-		user: process.argv.POSTGRES_USER,
-		password: process.argv.POSTGRES_PASSWORD,
-		database: 'itunes',
-		host: 'localhost',
-		port: 5432
-	}
+var localConnect = {
+	user: process.env.POSTGRES_USER,
+	password: process.env.POSTGRES_PASSWORD,
+	database: 'itunes',
+	host: 'localhost',
+	port: 5432	
 }
+
+//ternary operator. Another way of writing an 'if' statement
+//if process.env.DATABASE_URL is not null, then dbUrl = process.env.DATABASE_URL
+//if process.env.DATABASE_URL is undefined, then dbUrl = localConnect
+dbUrl = process.env.DATABASE_URL ? process.env.DATABASE_URL : localConnect;
 
 var pgClient = new pg.Client(dbUrl);
 pgClient.connect();
