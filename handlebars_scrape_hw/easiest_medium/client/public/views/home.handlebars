@@ -1,0 +1,54 @@
+<link rel="stylesheet" type="text/css" href="./public/css/home.css">
+<script src="./public/js/home.js"></script>
+
+<div class="container">
+	<h1>Handlebars Scrape</h1>
+	<h3>2017 NFL Team Yards Per Game Average</h3>
+	<div id="nfl-team"></div>
+	<button id="next-button" class="btn btn-primary">Next Team</button>
+	<button id="previous-button" class="btn btn-primary">Previous Team</button>
+	<div id="tables-div" class="row">
+		<div class="col-md-3" id="over-25" style="width: 50%">
+			<h3>Teams Over 25 PPG</h3>
+			<table id="over_table" class="table table-striped table-hover" style="width: 50%">
+				<thead>
+					<tr>
+						<th>Team</th>
+						<th>PPG</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each stats}}
+						{{#if this.greaterThan25}}
+							<tr id="{{this.abbr}}-tr" class="team-tr" data-team={{apiSplit this.team}} data-team_color={{this.color}} data-team_abbr={{this.abbr}}>
+								<td><a href="http://www.nfl.com/teams/profile?team={{this.abbr}}" target="_blank">{{this.team}}</a></td>
+								<td>{{this.ppg}}</td>
+							</tr>
+						{{/if}}
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-3" id="under-25" style="width: 50%">
+			<h3>Teams Below 25 PPG</h3>
+			<table class="table table-striped table-hover" style="width: 50%">
+				<thead>
+					<tr>
+						<th>Team</th>
+						<th>PPG</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each stats}}
+						{{#unless this.greaterThan25}}
+							<tr id="{{this.abbr}}-tr" class="team-tr" data-team={{apiSplit this.team}} data-team_abbr={{this.abbr}} data-team_color={{this.color}}>
+								<td><a href="http://www.nfl.com/teams/profile?team={{this.abbr}}" target="_blank">{{this.team}}</a></td>
+								<td>{{this.ppg}}</td>
+							</tr>
+						{{/unless}}
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

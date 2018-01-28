@@ -1,0 +1,37 @@
+<link rel="stylesheet" type="text/css" href="./../public/css/main_page.css">
+<script src="./../public/js/main_page.js"></script>
+
+<div class="container">
+	<div class="jumbotron text-center">
+		<h1>Welcome....Welcome</h1>
+		<h2>You have 2 options...Which one shall you choose</h2>
+	</div>
+	{{#if message}}
+		<div class="text-center center-block">
+			<div id="direct-buttons" class="btn-group" role="group" aria-label="Basic example">
+			  <a href="/sign-up" disabled="true" type="button" id="sign-up-button" class="btn btn-primary sign-buttons">Sign Up</a>
+			  <a href="/sign-in" type="button" disabled="true" id="sign-in-button" class="btn btn-info sign-buttons">Sign In</a>
+			  <a href="/profile/{{user_id}}" type="button" class="btn btn-success sign-buttons">Profile</a>
+			  <a type="button" id="main-page-logout-button" class="btn btn-danger sign-buttons">Logout</a> 
+			</div>
+		</div>
+		<br>
+		<div id="post-form-div" class="text-center">
+			<form id="post-form" data-id={{user_id}}>
+				<label>Message</label><br>
+				<textarea id="post-form-ta"></textarea><br>
+				<input class="btn btn-info" type="submit"/>
+			</form>
+		</div>
+		<br>
+	{{else}}
+		<div class="text-center center-block">
+			<div id="direct-buttons" class="btn-group" role="group" aria-label="Basic example">
+			  <a href="/sign-up" type="button" id="sign-up-button" class="btn btn-primary sign-buttons">Sign Up</a>
+			  <a href="/sign-in" type="button" id="sign-in-button" class="btn btn-info sign-buttons">Sign In</a>
+			</div>
+		</div>
+	{{/if}}
+	<div id="messages-div"></div>
+</div>
+{{> footer}}

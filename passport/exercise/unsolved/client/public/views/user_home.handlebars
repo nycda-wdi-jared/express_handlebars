@@ -1,0 +1,22 @@
+<link rel="stylesheet" type="text/css" href="../public/css/user_home.css">
+<script src='../public/js/user_home.js'></script>
+<div class="container">
+	<h1 id="hello">Hey {{obj.user.name}}</h1><br>
+	<div class="well">
+		<h3>Favorite Veggie: {{obj.profile.fav_veggie}}</h3>
+		<h3>Favorite Fruit: {{obj.profile.fav_fruit}}</h3>
+		<br>
+		<h2>Posts</h2>
+		{{!-- 
+			If there are posts, then append the posts
+			If there are no posts, then say "No Posts"
+		--}}
+	</div>
+	<div class="btn-group" role="group" aria-label="Basic example">
+		<a id="home-button" href="/" type="button" class="btn btn-primary sign-buttons">
+			<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+		</a>
+		<a id="logout-button" type="button" class="btn btn-danger sign-buttons">Logout</a>
+	</div>
+</div>
+{{> footer}}
