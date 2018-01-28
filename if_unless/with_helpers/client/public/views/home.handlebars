@@ -1,0 +1,57 @@
+<link rel="stylesheet" type="text/css" href="./public/css/home.css">
+<script src="./public/js/home.js"></script>
+
+<div class="container">
+	<h1>Handlebars Scrape</h1>
+	<h3 class="text-center">2017-2018 NBA Team Stats</h3>
+	<div class="text-center">
+		<h4>Greater Than 100 Points Per Game</h4>
+		<div>
+			<table class="table" style="width: '50%'">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Team</th>
+						<th>Team PPG</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each stats}}
+						{{#gt this.ppg 100}}
+							<tr>
+								<td>{{inc @index}}</td>
+								<td>{{this.team}}</td>
+								<td>{{this.ppg}}</td>
+							</tr>
+						{{/gt}}
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="text-center">
+		<h4>Less Than 100 Points Per Game</h4>
+		<div>
+			<table class="table" style="width: '50%'">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Team</th>
+						<th>Team PPG</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each stats}}
+						{{#lt this.ppg 100}}
+							<tr>
+								<td>{{inc @index}}</td>
+								<td>{{this.team}}</td>
+								<td>{{this.ppg}}</td>
+							</tr>
+						{{/lt}}
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+<link rel="stylesheet" type="text/css" href="./public/css/home.css">
+<script src="./public/js/home.js"></script>
+
+<div class="container">
+	<h1>Handlebars If/Unless</h1>
+	{{#if posts}}
+		{{#each posts}}
+			<p>{{this.message}}</p>
+		{{/each}}
+	{{else}}
+		<p>User has no posts</p>
+	{{/if}}
+</div>
